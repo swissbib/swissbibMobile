@@ -1,0 +1,9 @@
+CACHE MANIFEST
+# v18
+/static/images/icons/mail.png
+/static/images/icons/phone.png
+/static/images/apple-touch-icon.png
+/static/epfl.css
+/favicon.ico
+NETWORK:
+http://code.jquery.com/
