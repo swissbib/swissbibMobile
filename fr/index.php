@@ -54,8 +54,8 @@ include("../include/mobile/header.php");
 				 
 
 				 
-		echo '<input type="checkbox" name="epfbibonly" id="checkbox-1" class="custom"';
-		if(isset($_REQUEST["epfbibonly"]) and $_REQUEST["epfbibonly"]=="on"){
+		echo '<input type="checkbox" name="libraryfilter" id="checkbox-1" class="custom"';
+		if(isset($_REQUEST["libraryfilter"]) and $_REQUEST["libraryfilter"]=="on"){
 			echo "checked";
 		}
 		echo '>';
@@ -76,40 +76,35 @@ include("../include/mobile/header.php");
 
 
 <?php
+if(isset($_REQUEST["libraryfilter"])){
+	$library="E02";
+}
+else if(isset($_REQUEST["library"])){
+	$library=$_REQUEST["library"];
+}
+else{
+	$library=false;
+}
+	
+	
 if(isset($_REQUEST["q"]))
 {
 	//display a list of results
 
 	//set defaults
-	if(isset($_REQUEST["epfbibonly"])){
-		$epfbibonly=$_REQUEST["epfbibonly"];
-	}
-	else{
-		$epfbibonly=false;
-	}
-	
 	if(isset($_REQUEST["offset"])){
 		$offset=$_REQUEST["offset"];
 	}
 	else{
 		$offset=1;
 	}	
-	search($_REQUEST["q"],$epfbibonly, $offset, "fr");	
+	search($_REQUEST["q"], "NEBIS", $library, $offset, "fr");	
 	
 }
 else if(isset($_REQUEST["id"]))
 {
-	//display a single item
-	
-	//set defaults
-	if(isset($_REQUEST["epfbibonly"])){
-		$epfbibonly=$_REQUEST["epfbibonly"];
-	}
-	else{
-		$epfbibonly=false;
-	}
-	
-	displayItem($_REQUEST["id"],$epfbibonly, "fr");	
+	//display a single item	
+	displayItem($_REQUEST["id"], "NEBIS", $library, "fr");	
 }
 else
 {

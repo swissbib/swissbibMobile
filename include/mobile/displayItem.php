@@ -1,6 +1,6 @@
 ﻿<?php
 
-function displayItem($id, $epfbibonly=false, $language="en"){
+function displayItem($id, $network=false, $library=false, $language="en"){
 	
 	$sruQuery = new SruQuery();	
 	$pxml=$sruQuery->getRecordFromIdWithHoldings($id);	
@@ -89,8 +89,7 @@ function displayItem($id, $epfbibonly=false, $language="en"){
 	foreach ($results as $item) {
 	
 	
-	
-	if( (getHoldingField($item,"B")=="NEBIS" && ($epfbibonly!="on") ) ||(getHoldingField($item,"b")=="E02" && ($epfbibonly=="on")))//display only nebis item or only e02 item if epfbibonly is checked
+	if( (getHoldingField($item,"B")==$network && ($library==false) ) || (getHoldingField($item,"b")==$library && ($library==true)) )//display only nebis item or only e02 item if epfbibonly is checked
 	{
 		//transform language to three letters language name for nebis
 		switch ($language) {

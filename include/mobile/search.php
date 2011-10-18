@@ -1,17 +1,11 @@
 ﻿<?php
-function search($query, $epfbibonly=false, $offset=1, $language="en"){
+function search($query, $network=false, $library=false, $offset=1, $language="en"){
 	
 	
 	$sruQuery = new SruQuery();	
 	
+	$pxml=$sruQuery->getResultsFromSearch($query, $network, $library, $offset);
 	
-	if($epfbibonly=="on"){
-		$pxml=$sruQuery->getResultsFromSearch($query, "Nebis", "E02", $offset);
-	}
-	else
-	{
-		$pxml=$sruQuery->getResultsFromSearch($query, "Nebis", "", $offset);
-	}
 	
 	if($pxml->numberOfRecords==0)//no results
 	{
@@ -51,7 +45,7 @@ function search($query, $epfbibonly=false, $offset=1, $language="en"){
 			
 			echo '<li>';
 			
-			echo '<a href="index.php?id='.getControlField($marc,"001").'&epfbibonly='.$epfbibonly.'">';
+			echo '<a href="index.php?id='.getControlField($marc,"001").'&network='.$network.'&library='.$library.'">';
 			echo '<h3>';
 			echo getMarcField($marc, '245', 'a');
 			
