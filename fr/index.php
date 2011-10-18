@@ -85,7 +85,13 @@ else if(isset($_REQUEST["library"])){
 else{
 	$library=false;
 }
-	
+
+if(isset($_REQUEST["network"])){
+	$network=$_REQUEST["network"];
+}
+else{
+	$network="NEBIS";
+}
 	
 if(isset($_REQUEST["q"]))
 {
@@ -98,13 +104,13 @@ if(isset($_REQUEST["q"]))
 	else{
 		$offset=1;
 	}	
-	search($_REQUEST["q"], "NEBIS", $library, $offset, "fr");	
+	search($_REQUEST["q"], $network, $library, $offset, "fr");	
 	
 }
 else if(isset($_REQUEST["id"]))
 {
 	//display a single item	
-	displayItem($_REQUEST["id"], "NEBIS", $library, "fr");	
+	displayItem($_REQUEST["id"], $network, $library, "fr");	
 }
 else
 {
