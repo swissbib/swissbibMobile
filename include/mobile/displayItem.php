@@ -89,7 +89,8 @@ function displayItem($id, $network=false, $library=false, $language="en"){
 	foreach ($results as $item) {
 	
 	
-	if( (getHoldingField($item,"B")==$network && ($library==false) ) || (getHoldingField($item,"b")==$library && ($library==true)) )//display only nebis item or only e02 item if epfbibonly is checked
+	
+	if( (getHoldingField($item,"B")==$network && ($library==false) ) || (getHoldingField($item,"b")==$library && ($library==true)) || ( $network==false && $library==false) )//display only nebis item or only e02 item if epfbibonly is checked
 	{
 		//transform language to three letters language name for nebis
 		switch ($language) {
@@ -105,7 +106,15 @@ function displayItem($id, $network=false, $library=false, $language="en"){
 						
 		
 		echo '<li>';
-		echo '<a href="http://opac.nebis.ch/F/?func=item-global&doc_library=EBI01&doc_number='.$nebis_system_number.'&con_lng='.$lang3.'" rel="external" target="_blank">';
+		
+		if($network=="Nebis"){
+			echo '<a href="http://opac.nebis.ch/F/?func=item-global&doc_library=EBI01&doc_number='.$nebis_system_number.'&con_lng='.$lang3.'" rel="external" target="_blank">';
+		}
+		else{
+			echo '<a href="http://www.swissbib.ch/TouchPoint/perma.do?q=0%3D%22'.$id.'%22+IN+[3]&v=nose&l='.$language.'" rel="external" target="_blank">';
+		}
+		
+		
 		echo '<h3>';
 		
 		

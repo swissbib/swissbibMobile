@@ -31,7 +31,7 @@ class SruQuery
 		$queryParameter="&query=dc.id+%3D+%22".$id."%22";
 		$recordOffset="&startRecord=1";
 		$withHoldings="&x-info-10-get-holdings=true";
-		$url=$this->_baseUrl.$queryParameter.$this->_standardParameters.$recordOffset.$withHoldings;
+		$url=$this->_baseUrl.$queryParameter.$this->_standardParameters.$recordOffset.$withHoldings;		
 		return $this->sendToSru($url);
 	}
 	
