@@ -126,7 +126,7 @@ echo '
 		<a href="../fr/index.php" data-role="button">français</a>
 		<a data-role="button" class="ui-btn-active">English</a>			
 	</div>
-
+Powered by <a href="http://www.swissbib.ch">Swissbib</a>.
 ';
 }
 
