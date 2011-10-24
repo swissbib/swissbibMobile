@@ -68,6 +68,9 @@ include("../include/mobile/header.php");
 		if(isset($_REQUEST["libraryfilter"]) and $_REQUEST["libraryfilter"]=="on"){
 			echo "checked";
 		}
+		if(isset($_REQUEST["q"]) and isset($_REQUEST["library"])){
+			echo "checked";
+		}
 		echo '>';
 
 		echo '<label for="checkbox-1">my library only</label>';
@@ -83,13 +86,13 @@ include("../include/mobile/header.php");
 <?php
 
 if(isset($_REQUEST["libraryfilter"]) ) { 
-	if ($_REQUEST["libraryfilter"]=="on"){
-		$library=$_REQUEST["library"];	
-	}
-	else{
-		$library=false;
-	}
+	$library=$_REQUEST["library"];	
 }
+else
+{
+	$library=false;
+}
+
 
 
 	

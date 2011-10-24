@@ -58,6 +58,9 @@ include("../include/mobile/header.php");
 		if(isset($_REQUEST["libraryfilter"]) and $_REQUEST["libraryfilter"]=="on"){
 			echo "checked";
 		}
+		if(isset($_REQUEST["q"]) and isset($_REQUEST["library"])){
+			echo "checked";
+		}
 		echo '>';
 		echo '<label for="checkbox-1">Seulement EPFL</label>';
 		
