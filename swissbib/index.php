@@ -28,7 +28,7 @@ include("../include/mobile/header.php");
 <body data-theme="l">
 
 <div data-role="page" data-add-back-btn="true">
-  <div data-role="header" data-theme="l">
+  <div data-role="header" data-theme="l" style="background: #32CD0F;">
     <h1>Swissbib</h1>
   </div>
   <div data-role="content">
@@ -68,12 +68,10 @@ include("../include/mobile/header.php");
 		if(isset($_REQUEST["libraryfilter"]) and $_REQUEST["libraryfilter"]=="on"){
 			echo "checked";
 		}
-		if(isset($_REQUEST["q"]) and isset($_REQUEST["library"])){
-			echo "checked";
-		}
+
 		echo '>';
 
-		echo '<label for="checkbox-1">my library only</label>';
+		echo '<label for="checkbox-1">my library</label>';
 		echo '</fieldset>';
 
 		echo '</form>';
