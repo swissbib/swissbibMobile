@@ -139,10 +139,6 @@ echo '
 </ul>
 
 	<br />
-	<div data-role="controlgroup" data-type="horizontal" align="center">
-		<a href="../fr/index.php" data-role="button">français</a>
-		<a data-role="button" class="ui-btn-active">English</a>			
-	</div>
 
 ';
 }
