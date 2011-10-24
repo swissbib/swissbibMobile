@@ -28,7 +28,10 @@ function displayItem($id, $network=false, $library=false, $language="en"){
 	
 	echo '<br />['.$nebis_system_number.']<br /><br />';
 	echo '</p>';				
+	echo "\n";
+	echo "\n";
 	echo '<ul data-role="listview">';	
+	echo "\n";
 	
 	$holdings=$pxml->records->record[0]->extraRecordData->children('http://oclc.org/srw/extraData');
 	$holdings=$holdings->children('urn:oclc-srw:holdings');
@@ -150,6 +153,7 @@ function displayItem($id, $network=false, $library=false, $language="en"){
 		echo "</p>";
 		echo '</a>';
 		echo '</li>';
+		echo "\n";
 		}
 	}			
 	echo '</ul>';			

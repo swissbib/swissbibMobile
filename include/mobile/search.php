@@ -36,8 +36,10 @@ function search($query, $network=false, $library=false, $offset=1, $language="en
 		echo $pxml->numberOfRecords;
 		echo getMessage("numberofresults",$language);
 		echo "</p>";
+		echo "\n";
 		
 		echo '<ul data-role="listview">';
+		echo "\n";
 					
 		foreach ($pxml->records->record as $record) {
 			$marc=$record->recordData->children('srw_marc',true);
@@ -57,6 +59,7 @@ function search($query, $network=false, $library=false, $offset=1, $language="en
 			echo getMarcField($marc, '245', 'c');
 			
 			echo '</strong></p>';
+			echo "\n";
 			echo '<p>';
 			
 			
@@ -66,10 +69,13 @@ function search($query, $network=false, $library=false, $offset=1, $language="en
 			
 			
 			echo '</p>';
+			echo "\n";
 			echo '</a>';
 			echo '</li>';
+			echo "\n";
 		}			
 		echo '</ul>';
+		echo "\n";
 		
 		
 		//"next records" button
