@@ -84,7 +84,12 @@ function search($query, $network=false, $library=false, $offset=1, $language="en
 			echo '<br/><br/>
 			<ul data-role="listview">
 			<li>';
-			echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&offset='.$next_record_number.'">';
+			if($library){ //to have library filter checkbox ticked
+				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&libraryfilter=on'.'&offset='.$next_record_number.'">';
+			}
+			else{
+				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&offset='.$next_record_number.'">';
+			}
 			echo getMessage("next",$language);
 			echo '</a></li>';
 			echo '</ul>';
