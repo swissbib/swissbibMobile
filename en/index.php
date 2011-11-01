@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <?php
 //English Version 
-include("../include/mobile/header.php");
+include("../include/mobile/Header.php");
 ?>
 <html>
   <head>

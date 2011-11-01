@@ -1,21 +1,21 @@
 ﻿<?php
 
-include("messages.php");
-function search($query, $network=false, $library=false, $offset=1, $language="en"){
-	
+include('messages.php');
+
+function search($query, $network=false, $library=false, $offset=1, $language='en')
+{
 	$sruQuery = new SruQuery();	
 	
 	$pxml=$sruQuery->getResultsFromSearch($query, $network, $library, $offset);
+		
 	
-	
-	if($pxml->numberOfRecords==0)//no results
-	{
-		echo getMessage("noresults",$language);
+	if ($pxml->numberOfRecords==0) { //no results
+		echo getMessage('noresults',$language);
 	
 		$spell_suggestion = $sruQuery->getSpellSuggestion($query);
 		
-		if($spell_suggestion!=False){
-			echo getMessage("didyoumean",$language);			
+		if ($spell_suggestion!=False) {
+			echo getMessage('didyoumean',$language);			
 			echo '<br />';
 			echo '<br />';
 			echo '<ul data-role="listview">';
@@ -24,18 +24,14 @@ function search($query, $network=false, $library=false, $offset=1, $language="en
 			echo $spell_suggestion;
 			echo '</a>';
 			echo '</li>'; 
+		} else {
+			echo getMessage('revisesearch',$language);
 		}
-		else{
-			echo getMessage("revisesearch",$language);
-		}
-	}
-	else
-	{
-					
-		echo "<p>";
+	} else {
+		echo '<p>';
 		echo $pxml->numberOfRecords;
-		echo getMessage("numberofresults",$language);
-		echo "</p>";
+		echo getMessage('numberofresults',$language);
+		echo '</p>';
 		echo "\n";
 		
 		echo '<ul data-role="listview">';
@@ -64,7 +60,7 @@ function search($query, $network=false, $library=false, $offset=1, $language="en
 			
 			
 			echo getMarcField($marc, '260', 'c');
-			echo ". ";
+			echo '. ';
 			
 			
 			
@@ -80,17 +76,16 @@ function search($query, $network=false, $library=false, $offset=1, $language="en
 		
 		//"next records" button
 		$next_record_number=$pxml->nextRecordPosition;
-		if($next_record_number){
+		if ($next_record_number) {
 			echo '<br/><br/>
 			<ul data-role="listview">
 			<li>';
-			if($library){ //to have library filter checkbox ticked
+			if ($library) { //to have library filter checkbox ticked
 				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&libraryfilter=on'.'&offset='.$next_record_number.'">';
-			}
-			else{
+			} else {
 				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&offset='.$next_record_number.'">';
 			}
-			echo getMessage("next",$language);
+			echo getMessage('next',$language);
 			echo '</a></li>';
 			echo '</ul>';
 		}
