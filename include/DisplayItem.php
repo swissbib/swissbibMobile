@@ -109,11 +109,8 @@ function displayItem($id, $network=false, $library=false, $language='en')
 			
 			echo '<li>';
 			
-			if ($network=='NEBIS') {
-				echo '<a href="http://opac.nebis.ch/F/?func=item-global&doc_library=EBI01&doc_number='.$nebis_system_number.'&con_lng='.$lang3.'" rel="external" target="_blank">';
-			} else {
-				echo '<a href="http://www.swissbib.ch/TouchPoint/perma.do?q=0%3D%22'.$id.'%22+IN+[3]&v=nose&l='.$language.'" rel="external" target="_blank">';
-			}
+			echo '<a href="http://opac.nebis.ch/F/?func=item-global&doc_library=EBI01&doc_number='.$nebis_system_number.'&con_lng='.$lang3.'" rel="external" target="_blank">';
+			
 						
 			echo '<h3>';
 				
