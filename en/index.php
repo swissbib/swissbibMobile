@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <?php
 //English Version 
-include("../include/mobile/Header.php");
+include("../include/Header.php");
 ?>
 <html>
   <head>
   <title>EPFL Library Mobile</title>
   <?php
-	include("../include/mobile/header.html");
+	include("../include/html/header.html");
   ?>
   
   <!--google analytics -->

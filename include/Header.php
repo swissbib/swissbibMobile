@@ -1,6 +1,6 @@
 <?php
-include('../include/mobile/Search.php');
-include('../include/mobile/DisplayItem.php');
-include('../include/mobile/MarcParser.php');
-include('../include/mobile/SruQuery.php');
+include('../include/Search.php');
+include('../include/DisplayItem.php');
+include('../include/MarcParser.php');
+include('../include/SruQuery.php');
 ?>
