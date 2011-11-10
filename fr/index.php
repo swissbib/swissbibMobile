@@ -114,7 +114,7 @@ include("../include/Header.php");
 			<a data-role="button" class="ui-btn-active">français</a>
 			<a href="../en/index.php" data-role="button">English</a>			
 		</div>
-		Powered by <a href="http://www.swissbib.ch/fr">Swissbib</a>.';
+		Powered by <a href="https://github.com/swissbib/swissbibMobile">swissbibMobile</a>.';
 		}
 
 
