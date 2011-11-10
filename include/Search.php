@@ -1,7 +1,5 @@
 ﻿<?php
 
-include('messages.php');
-
 function search($query, $network=false, $library=false, $offset=1, $language='en')
 {
 	$sruQuery = new SruQuery();	
