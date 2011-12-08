@@ -9,10 +9,10 @@ if (isset($_SERVER["HTTP_ACCEPT_LANGUAGE"])){
 	}
 }
 if ($language=="fr") {
-	header("Location: ../fr/index.php");
+	header("Location: fr/index.php");
 }
 else {
-	header("Location: ../en/index.php");
+	header("Location: en/index.php");
 }
 
 
