@@ -26,7 +26,9 @@ include("../include/mobile/display_item.php");
 
 <h2>Location and maps</h2>
 
-<p>The Library is located in the Rolex Learning Center at EPFL. .</p>
+<p>The Library is located in the Rolex Learning Center at EPFL.</p>
+
+<a href="http://maps.google.com/maps?q=46.518394,6.568469" data-role="button" data-inline="true">Google Maps</a> 
 
 <h2>Public Transport</h2>
 
