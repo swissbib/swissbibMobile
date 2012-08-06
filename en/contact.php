@@ -1,15 +1,10 @@
 ﻿<!DOCTYPE html>
-<?php
-//English Version 
 
-include("../include/mobile/swissbib_search.php");
-include("../include/mobile/display_item.php");
-?>
 <html>
   <head>
-  <title>EPFL Library Mobile</title>
+  <title>EPFL Library - Contact</title>
   <?php
-	include("../include/mobile/header.html");
+	include("../include/html/header.html");
   ?>
   
   
@@ -30,12 +25,12 @@ include("../include/mobile/display_item.php");
 	<ul data-role="listview" role="listbox">
 
 <li>
-<a href="tel:+41 21 6932156"><img src="http://m.epfl.ch/static/images/icons/phone.png" class="ui-li-icon" alt="Téléphone"/>+41 21 6932156</a>
+<a href="tel:+41 21 6932156">+41 21 6932156</a>
 </li>
 
 
 <li>
-<a href="mailto:questions.bib@epfl.ch"><img src="http://m.epfl.ch/static/images/icons/mail.png" class="ui-li-icon" alt="Email"/>questions.bib@epfl.ch</a>
+<a href="mailto:questions.bib@epfl.ch">questions.bib@epfl.ch</a>
 </li>
 
 </ul> 

@@ -1,15 +1,10 @@
 ﻿<!DOCTYPE html>
-<?php
-//Version francaise
 
-include("../include/mobile/swissbib_search.php");
-include("../include/mobile/display_item.php");
-?>
 <html>
   <head>
-  <title>EPFL Bibliothèque Mobile</title>
+  <title>EPFL Bibliothèque - Contact</title>
   <?php
-	include("../include/mobile/header.html");
+	include("../include/html/header.html");
   ?>  
 </head>
 <body data-theme="l">

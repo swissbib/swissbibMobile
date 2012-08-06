@@ -1,15 +1,10 @@
 ﻿<!DOCTYPE html>
-<?php
-//English Version 
 
-include("../include/mobile/swissbib_search.php");
-include("../include/mobile/display_item.php");
-?>
 <html>
   <head>
-  <title>EPFL Library Mobile</title>
+  <title>EPFL Library - Hours</title>
   <?php
-	include("../include/mobile/header.html");
+	include("../include/html/header.html");
   ?>
   
   

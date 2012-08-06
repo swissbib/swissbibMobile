@@ -1,15 +1,10 @@
 ﻿<!DOCTYPE html>
-<?php
-//Version francaise
 
-include("../include/mobile/swissbib_search.php");
-include("../include/mobile/display_item.php");
-?>
 <html>
   <head>
-  <title>EPFL Bibliothèque Mobile</title>
+  <title>EPFL Bibliothèque - Horaires</title>
   <?php
-	include("../include/mobile/header.html");
+	include("../include/html/header.html");
   ?>
     
 </head>
@@ -22,8 +17,7 @@ include("../include/mobile/display_item.php");
 <div data-role="content">	
 	
 	<?php
-		$url="http://library.epfl.ch/scripts/hours-search.php";
-		//$url="http://sisbsrv13.epfl.ch/scripts/hours-search.php?date=2011-08-01";
+		$url="http://library.epfl.ch/scripts/hours-search.php";		
 		$text_full=@file_get_contents($url);
 		$opening=substr($text_full,0,strpos($text_full, "|"));		
 		$services=substr($text_full,strpos($text_full, "|")+1);						
