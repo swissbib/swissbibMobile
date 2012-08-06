@@ -23,9 +23,6 @@
 <a href="http://maps.google.com/maps?q=46.518394,6.568469" data-role="button" data-inline="true">Google Maps</a> 
 
 
-
-</ul> 
-
 <h2>Transports publics</h2>
 
 <p>La Bibliothèque se trouve à 10 minutes à pied de l'arrêt EPFL, sur la ligne m1 des <a href="http://www.t-l.ch/">Transports publics de la région lausannoise</a>.</p>
