@@ -21,7 +21,7 @@
 
 <p>Rencontre organisée par la Bibliothèque de l'EPFL à l'occasion du dixième anniversaire des licences Creative Commons.</p>
 
-<p><strong>Date :</strong> Jeudi 25 octobre de 15h00 à 19h00</p>
+<p><strong>Date :</strong> Jeudi 25 octobre de 15h15 à 19h00</p>
 
 <p><strong>Lieu :</strong> <a href="access.php">Forum du Rolex Learning Center</a>, campus de l'EPFL (Lausanne)</p>
 
@@ -31,13 +31,10 @@
 
 
 
-<h2>Programme provisoire</h2>
+<h2>Programme</h2>
 
 <dl>
-    <dt>15h00</dt>
-    <dd><b>Accueil général</b></dd>
-
-    <dt>15h30</dt>
+    <dt>15h15</dt>
     <dd><b>Films introductifs</b><br>
     </dd>
 
@@ -46,22 +43,25 @@
     <b>Isabelle Kratz</b>, Directrice de la Bibliothèque de l'EPFL.</dd>
 
     <dt>16h00</dt>
-    <dd><b>Conférence-débat 1 : <i>Le projet Creative Commons et ses licences</i></b><br>
+    <dd><b>Conférence-débat 1 : <i>Licences CC, bilan et perspectives</i></b><br>
     <b>Lara Beswick</b>, Coordinatrice du groupe art et musique de Creative Commons France.</dd>
 
     <dt>17h00</dt>
     <dd><b>Stands et en-cas offert</b><br>
     (Liste non exhaustive des stands ; des mises à jour seront faites ultérieurement.)<br>
-    <b>Paul Oberson</b>, <a href="http://craft.epfl.ch/page-48182.html">Centre de Recherche et d'Appui pour la Formation et ses Technologies</a> (CRAFT), EPFL, Lausanne.<br>
     <b>Michael Schär</b> et <b>Davide Longo</b>, <a href="http://www.schaermoments.com/">Schaermoments</a>, Label de musique, Lausanne.<br>
     <b>Patrick Johner</b>, <a href="http://icp.ge.ch/sem/prestations/spip.php?article97">SEM Documentation</a>, Département de l'instruction publique, de la culture et du sport, Genève.<br>
-    <b>Maude Thomas</b>, <a href="http://www.wikivalais.ch/">Wikivalais</a>, Médiathèque du Valais, Sion.<br>    
+    <b>Maude Thomas</b>, <a href="http://www.wikivalais.ch/">Wikivalais</a>, Médiathèque du Valais, Sion.<br>
+	<b>Frédéric Schütz</b>, <a href="http://www.wikimedia.ch/">Wikimedia CH</a><br>
+	<b>Ludovic Péron</b>, photographe, <a href="http://www.wikimedia.ch/">Wikimedia CH</a><br>
     <b>Raphaël Grolimund</b> et <b>Aurore Granval</b>, Bibliothèque de l'EPFL, Lausanne.<br>
     </dd>
 
     <dt>18h00</dt>
     <dd><b>Conférence-débat 2 : <i>Creative Commons@CERN: le partage des connaissances accélère la science</i></b><br>
-    <b>Diane Nourissier Sirakov</b>, Juriste du CERN, Genève.</dd>
+    <b>Diane Nourissier Sirakov</b>, Juriste du CERN, Genève.<br>
+	<b>Dr Brigitte Bloch-Devaux</b>, Université de Turin.	
+	</dd>
 </dl>
 
 
