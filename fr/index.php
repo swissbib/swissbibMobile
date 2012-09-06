@@ -29,7 +29,7 @@ include("../include/Header.php");
 
 <div data-role="page" data-add-back-btn="true">
 	<div data-role="header" data-theme="l">
-		<h1>Bibliothèque</h1>
+		<h1>EPFL Bibliothèque</h1>
 	</div>
 	<div data-role="content">
   

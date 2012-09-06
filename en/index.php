@@ -28,7 +28,7 @@ include("../include/Header.php");
 <body data-theme="l">
 <div data-role="page" data-add-back-btn="true">
 	<div data-role="header" data-theme="l">
-		<h1>Library</h1>
+		<h1>EPFL Library</h1>
 	</div>
 	<div data-role="content">
     
