@@ -48,12 +48,12 @@
 
     <dt>17h00</dt>
     <dd><b>Stands et en-cas offert</b><br>
-    (Liste non exhaustive des stands ; des mises à jour seront faites ultérieurement.)<br>
+    <b>Frédéric Schütz</b>, <a href="http://www.wikimedia.ch/">Wikimedia CH</a> et <b>Chantal Ebongué</b>, directrice administrative de Wikimedia CH.<br>
+    <b>Ludovic Péron</b>, photographe, <a href="http://www.wikimedia.ch/">Wikimedia CH</a>.<br>
     <b>Michael Schär</b> et <b>Davide Longo</b>, <a href="http://www.schaermoments.com/">Schaermoments</a>, Label de musique, Lausanne.<br>
     <b>Patrick Johner</b>, <a href="http://icp.ge.ch/sem/prestations/spip.php?article97">SEM Documentation</a>, Département de l'instruction publique, de la culture et du sport, Genève.<br>
     <b>Maude Thomas</b>, <a href="http://www.wikivalais.ch/">Wikivalais</a>, Médiathèque du Valais, Sion.<br>
-	<b>Frédéric Schütz</b>, <a href="http://www.wikimedia.ch/">Wikimedia CH</a><br>
-	<b>Ludovic Péron</b>, photographe, <a href="http://www.wikimedia.ch/">Wikimedia CH</a><br>
+    <b>Théo Bondolfi</b>, <a href="http://www.ynternet.org/">Ynternet.org</a>, Fondation pour la recherche et la formation en eCulture, Lausanne.<br>
     <b>Raphaël Grolimund</b> et <b>Aurore Granval</b>, Bibliothèque de l'EPFL, Lausanne.<br>
     </dd>
 
