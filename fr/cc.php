@@ -25,6 +25,7 @@
 
 <p><strong>Lieu :</strong> <a href="access.php">Forum du Rolex Learning Center</a>, campus de l'EPFL (Lausanne)</p>
 
+
 <p>Entrée gratuite</p>
 
 <p><a href="http://inform.epfl.ch/index.php?form=Creative_Commons" data-role="button" data-inline="true">Inscription</a> </p>
