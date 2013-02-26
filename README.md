@@ -41,7 +41,7 @@ To use the code on your own servers, you need to have a PHP version >= 5.2.
 Report problems
 ---------------
 
-If you encounter bugs, or have feature requests, please use the [issue tracker in GitHub](https://github.com/liowalter/swissbibMobile/issues). Alternatively, you can send an email to [Lionel Walter](https://github.com/liowalter).
+If you encounter bugs, or have feature requests, please use the [issue tracker in GitHub](https://github.com/swissbib/swissbibMobile/issues). Alternatively, you can send an email to [Lionel Walter](https://github.com/liowalter).
 
 
 Disclaimer
