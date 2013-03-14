@@ -16,19 +16,6 @@
 </div>
 <div data-role="content">	
 	
-	<?php
-		$url="http://library.epfl.ch/scripts/hours-search.php";		
-		$text_full=@file_get_contents($url);
-		$opening=substr($text_full,0,strpos($text_full, "|"));		
-		$services=substr($text_full,strpos($text_full, "|")+1);						
-	?>
-	
-	
-	<h3>Aujourd'hui</h3>
-	<p>Ouverture : <?php echo $opening;?><br />
-	   Services : <?php echo $services;?></p>
-	
-	
 	<h3>Horaires habituels</h3>
 	<p>Ouverture : 7 jours sur 7, 7h-24h<br />
 	   Services : lu-ve, 8h-20h</p>
