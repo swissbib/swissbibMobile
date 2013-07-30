@@ -114,7 +114,14 @@ function displayItem($id, $network=false, $library=false, $language='en')
 			
 			echo '<li>';
 			
-			echo '<a href="http://opac.nebis.ch/F/?func=item-global&doc_library=EBI01&doc_number='.$nebis_system_number.'&con_lng='.$lang3.'" rel="external" target="_blank">';
+            $urlNebis="http://library.epfl.ch/";
+            if($language=='en') {
+                $urlNebis.="en/"; 
+            }
+            $urlNebis.="nebis/?record=";
+            $urlNebis.=$nebis_system_number;
+            
+            echo '<a href="'.$urlNebis.'" rel="external" target="_blank">';
 			
 						
 			echo '<h3>';
