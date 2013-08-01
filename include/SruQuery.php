@@ -61,7 +61,15 @@ class SruQuery
 	
 	private function sendToSru($url)
 	{		
-		$response = @file_get_contents($url);	
+		//$response = @file_get_contents($url);
+
+        $ch = curl_init($url);
+        //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: text/xml'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+
 		//echo "<a href='".$url."'>link</a>";
 		
 		if ($response === False)
