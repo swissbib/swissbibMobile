@@ -1,6 +1,6 @@
 ﻿<?php
 
-function search($query, $network=false, $library=false, $offset=1, $language='en')
+function search($query, $network=false, $library=false, $offset=1, $language='de')
 {
 	$sruQuery = new SruQuery();	
 	
@@ -18,7 +18,7 @@ function search($query, $network=false, $library=false, $offset=1, $language='en
 			echo '<br />';
 			echo '<ul data-role="listview">';
 			echo '<li>';
-			echo '<a href="index.php?q='.$spell_suggestion.'&network='.$network.'&library='.$library.'">';
+			echo '<a href="index.php?q='.$spell_suggestion.'&network='.$network.'&library='.$library.'&language='.$language.'">';
 			echo $spell_suggestion;
 			echo '</a>';
 			echo '</li>'; 
@@ -42,7 +42,7 @@ function search($query, $network=false, $library=false, $offset=1, $language='en
 			
 			echo '<li>';
 			
-			echo '<a href="index.php?id='.getControlField($marc,"001").'&network='.$network.'&library='.$library.'">';
+			echo '<a href="index.php?id='.getControlField($marc,"001").'&network='.$network.'&library='.$library.'&language='.$language.'">';
 			echo '<h3>';
 			echo getMarcField($marc, '245', 'a');
 			
@@ -79,9 +79,9 @@ function search($query, $network=false, $library=false, $offset=1, $language='en
 			<ul data-role="listview">
 			<li>';
 			if ($library) { //to have library filter checkbox ticked
-				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&libraryfilter=on'.'&offset='.$next_record_number.'">';
+				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&libraryfilter=on'.'&language='.$language.'&offset='.$next_record_number.'">';
 			} else {
-				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&offset='.$next_record_number.'">';
+				echo '<a href="index.php?q='.$query.'&network='.$network.'&library='.$library.'&language='.$language.'&offset='.$next_record_number.'">';
 			}
 			echo getMessage('next',$language);
 			echo '</a></li>';

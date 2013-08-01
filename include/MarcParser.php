@@ -5,11 +5,29 @@ function getMarcField($marc, $field, $subfield)
 	$marc->registerXPathNamespace('marc', 'http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd');
 	$result=$marc->xpath('marc:datafield[@tag="'.$field.'"]/marc:subfield[@code = "'.$subfield.'"]');
 	if ($result) {
-		return($result[0]);
+		return((string)$result[0]);
 	} else {
 		return "";
 	}
 }
+
+
+/*
+ * extension Guenter
+ * for the 035 fields I need the whole array of XMLSimpleFields Types
+ */
+function getArrayMarcField($marc, $field, $subfield)
+{
+	$marc->registerXPathNamespace('marc', 'http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd');
+	$result=$marc->xpath('marc:datafield[@tag="'.$field.'"]/marc:subfield[@code = "'.$subfield.'"]');
+	if ($result) {
+		return $result;
+	} else {
+		return "";
+	}
+}
+
+
 
 function getNebisSystemNumber($marc)
 {
@@ -27,7 +45,7 @@ function getControlField($marc, $field)
 	$marc->registerXPathNamespace('marc', 'http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd');
 	$result=$marc->xpath('marc:controlfield[@tag="'.$field.'"]');
 	if ($result) {
-		return($result[0]);
+		return((string)$result[0]);
 	} else {
 		return "";
 	}
@@ -38,7 +56,7 @@ function getHoldingField($marc, $subfield)
 	$marc->registerXPathNamespace('ns3', 'urn:oclc-srw:holdings');
 	$result=$marc->xpath('ns3:subfield[@code = "'.$subfield.'"]');
 	if ($result) {
-		return($result[0]);
+		return((string)$result[0]);
 	} else {
 		return "";
 	}

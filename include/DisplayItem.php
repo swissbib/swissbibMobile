@@ -1,11 +1,13 @@
 ﻿<?php
 
-function displayItem($id, $network=false, $library=false, $language='en')
+
+
+function displayItem($id, $network=false, $library=false, $language='de')
 {
-	$sruQuery = new SruQuery();	
-	$pxml=$sruQuery->getRecordFromIdWithHoldings($id);	
-					
-	$marc=$pxml->records->record[0]->recordData->children('srw_marc',true);								
+	$sruQuery = new SruQuery();
+	$pxml=$sruQuery->getRecordFromIdWithHoldings($id);
+
+	$marc=$pxml->records->record[0]->recordData->children('srw_marc',true);
 	echo '<h3>';
 	echo getMarcField($marc, '245', 'a');
 	echo '</h3>';
@@ -19,145 +21,214 @@ function displayItem($id, $network=false, $library=false, $language='en')
 	echo getMarcField($marc, '260', 'c');
 	echo '<br />';
 	echo getMarcField($marc, '250', 'a');
-				
-	//nebis system number
-	$nebis_system_number=getNebisSystemNumber($marc);
-	
-	
-	echo '<br />['.$nebis_system_number.']<br /><br />';
-	echo '</p>';				
+
+
+
+	echo '<br />['.$id.']<br /><br />';
+	echo '</p>';
 	echo "\n";
 	echo "\n";
-	echo '<ul data-role="listview">';	
+	echo '<ul data-role="listview">';
 	echo "\n";
-	
+
 	$holdings=$pxml->records->record[0]->extraRecordData->children('http://oclc.org/srw/extraData');
 	$holdings=$holdings->children('urn:oclc-srw:holdings');
 	$holdings->registerXPathNamespace('ns3', 'urn:oclc-srw:holdings');
 	$results=$holdings->xpath('ns3:datafield');
 
 
-	$lookuptable=array(
-		"E02AA" => "Arts et Architecture",
-		"E02AB" => "Arts et Architecture. Grands formats",
-		"E02EA" => "Enseignement",
-		"E02GS" => "Guichet sciences et techniques",
-		"E02GU" => "Accueil de la Bibliothèque",
-		"E02HA" => "Sciences et société",
-		"E02IB" => "Espace découverte",
-		"E02IC" => "Revues. Sciences et société",
-		"E02ID" => "Revues. Art et architecture",
-		"E02IN" => "Administration bibliothèque. S'adresser au guichet",
-		"E02MA" => "Sous-sol. A28-A82",
-		"E02MB" => "Sous-sol. B28-B43. Chimie",
-		"E02MD" => "Sous-sol. B75-B76. Management",
-		"E02ME" => "Sous-sol. B83-B90. Architecture",
-		"E02MF" => "Sous-sol. B71. Pédagogie",
-		"E02MG" => "Sous-sol. B66-B71. Matériaux",
-		"E02MH" => "Sous-sol. B58-B65. Informatique",
-		"E02MI" => "Sous-sol. B72. Biologie",
-		"E02MJ" => "Sous-sol. B44-B57. Physique",
-		"E02ML" => "Sous-sol. B77-B81. Sciences criminelles",
-		"E02MM" => "Sous-sol. B91-B92. Transports",
-		"E02MN" => "Sous-sol. B93-B94. Topométrie",
-		"E02MO" => "Sous-sol. B92-B93. Photogrammétrie",
-		"E02MP" => "Sous-sol. A83-A98. Monographies",
-		"E02OL" => "EL Electronic Library",
-		"E02PA" => "Sous-sol. C73-C124",
-		"E02PB" => "Sous-sol. C32-C57. Périodiques chimie",
-		"E02PC" => "Sous-sol. C1-C31. Périodiques mathématiques",
-		"E02PE" => "Sous-sol. B108-B117. Périodiques architecture",
-		"E02PG" => "Sous-sol. B121-B122. Périodiques matériaux",
-		"E02PJ" => "Sous-sol. C58-C72. Périodiques physique",
-		"E02PL" => "Sous-sol. B123-B125. Périodiques sciences criminelles",
-		"E02PQ" => "Sous-sol. B118. Périodiques SHS",
-		"E02RA" => "Sciences et Techniques",
-		"E02RB" => "Mathématiques",
-		"E02RC" => "Mathématiques. Périodiques",
-		"E02SA" => "Sous-sol. B103-B107. Thèses et trav.dipl. EPFL",
-		"E02SB" => "Sous-sol. B102. Thèses chimie UNIL",
-		"E02SD" => "Sous-sol. B73-B74. Grands formats",
-		"E02SE" => "Sous-sol. B102. Diplômes chimie",
-		"E02SG" => "Sous-sol. B100-B101. Thèses, trav.dipl. et prépublications",
-		"E02SP" => "Sous-sol. B97-B99. Polycopiés",
-		"E02XA" => "Sous-sol. A101-106. Dépôt légal",
-		"E02XB" => "Sous-sol. A109-A110. Fonds XIXe. S'adresser au guichet",
-		"E02XC" => "Sous-sol. A111-A114. Fonds spéciaux. S'adresser au guichet",
-		"E02XE" => "Sous-sol. A116-A121. Divers. S'adresser au guichet",
-		"E02XF" => "Sous-sol. N4-N17. Grands formats. S'adresser au guichet",
-		"E02XG" => "Sous-sol. Stock",
-		"E02ZA" => "Dépôt externe. Fonds réservé IGAT. Prêt et consultation exclus",
-		"E02ZB" => "Dépôt externe. Faculté des Sciences de la vie",
-		"E02ZC" => "Dépôt externe. IPSB-LCB. Prêt et consultation exclus",
-		"LEXT" => "LEXT Livre extérieur",
-		"LIPR" => "Livres anciens. Sur demande"
-	);
-	
+
+
+    /*
+     * extension Guenter
+     */
+
+
+    /*
+     * the mechanism via 035 now isn't necessary anymore because Tobias configured the proper mappings on holdings level
+     * additionaly 035 tags aren't for 100% sure because it might happen that local sys-ids don't have a unique reference
+     * on holdings in the enevironment of swissbib (Tobias stuff....)
+     * Otherwise it might be helpful in the context of other conditions therefore it isn't deleted
+     *
+    $sysIdsAsDictionary = array();
+    if (MobileConfigs::getBacklinkType() === "SOURCESYSTEM") {
+
+        $localIds = array();
+
+        foreach (getArrayMarcField($marc,'035','a') as $sysid) {
+            $localIds[] = (string)$sysid;
+        }
+
+
+        foreach ($localIds as $local) {
+            $matches = array();
+            //we are looking for a pattern like: (IDSBB)1234567
+            if ( strstr($local,"RERO") || strstr($local,"SNL")) {
+                $localPattern = preg_match("/^\((.*?)\)vtls(.*)$/",$local,$matches);
+                if ($localPattern) {
+                    $sysIdsAsDictionary[$matches[1]] = $matches[2];
+                }
+
+            }else {
+
+                $localPattern = preg_match("/^\((.*?)\)(.*)$/",$local,$matches);
+                if ($localPattern) {
+                    $sysIdsAsDictionary[$matches[1]] = $matches[2];
+                }
+            }
+
+        }
+
+    }
+    */
+
+    /*
+     * end extension Guenter
+     */
+
+
 	foreach ($results as $item) {
-		if (   (getHoldingField($item,'B')==$network && $library==false) 
-		    || (getHoldingField($item,'b')==$library && $library==true) 
-			|| ($network==false && $library==false) 
-		) {//display only nebis item or only e02 item if epfbibonly is checked
-		
-			//transform language to three letters language name for nebis
-			switch ($language) {
-				case 'fr' : 
-					$lang3='fre';
-					break;
-				case 'en' :
-					$lang3='eng';
-					break;
-				default:
-					$lang3='eng';
+		$itemNetwork=getHoldingField($item,'B');
+
+
+        //because network label will be changed in case of rero
+        $itemNetworkBacklinkDictionary = $itemNetwork;
+
+        $itemLibraryCode=getHoldingField($item,'b');
+
+
+
+		if ( (substr($network,0,1)=='R' || $network==false)
+			 && $itemNetwork=='RERO'
+		) {
+		//address searches in local rero networks, get library and network codes from $itemLibraryCode, i.e. 949$b
+		//for rero results, the 949$B is always RERO and not the local network codes
+		//the local network is in 949$b, first digit for RERO-FR and first and second digits for other rero networks
+		//the library code is in 949$b, digits 1-5 for RERO-FR and digits 1-6 for other rero networks
+			if (substr($itemLibraryCode,1,1)=="0") {//Rero Fribourg
+				if ($network!='R*') {
+					$itemNetwork='R1'; //i.e. R1
+				} else {
+					$itemNetwork='R*';
+				}
+				$itemLibraryCode='R'.substr($itemLibraryCode,0,4);
+			} else { //other rero
+				if ($network!='R*') {
+					$itemNetwork='R'.substr($itemLibraryCode,0,2);
+				} else {
+					$itemNetwork='R*';
+				}
+				$itemLibraryCode='R'.substr($itemLibraryCode,0,5);
 			}
-							
-			
+		}
+
+
+		if (   ($itemNetwork==$network && $library==false)
+		    || ($itemLibraryCode==$library && $library==true)
+			|| ($network==false && $library==false)
+		) {//display only items in the network or only library items if checkbox is checked
+
 			echo '<li>';
-			
-			echo '<a href="http://opac.nebis.ch/F/?func=item-global&doc_library=EBI01&doc_number='.$nebis_system_number.'&con_lng='.$lang3.'" rel="external" target="_blank">';
-			
-						
+
+
+            /*
+             * extension Guenter for backlinks
+             */
+
+            if (MobileConfigs::getBacklinkType() === "SOURCESYSTEM") {
+                //send the user back to the source system
+
+                //$lsys = $sysIdsAsDictionary[$itemNetworkBacklinkDictionary];
+                $lsys = getHoldingField($item,'E');
+
+
+
+                switch ($itemNetworkBacklinkDictionary) {
+                    case "RERO":
+
+                        //this is such a mess...
+                        $reroMultiCode=getHoldingField($item,'b');
+
+
+                        if (strlen($reroMultiCode) == 9) {
+                            $subnetwork = substr($reroMultiCode,0,2);
+                            $sublocalID = substr($reroMultiCode,0,5);
+
+                            echo '<a href=' . sprintf(MobileConfigs::getBacklinkSourceSystem($itemNetworkBacklinkDictionary),$subnetwork,$lsys,$sublocalID)  . ' rel="external" target="_blank">';
+                        }
+                        elseif (strlen($reroMultiCode == 8)) {
+                            $subnetwork = substr($reroMultiCode,0,1);
+                            $sublocalID = substr($reroMultiCode,0,4);
+                            echo '<a href=' . sprintf(MobileConfigs::getBacklinkSourceSystem($itemNetworkBacklinkDictionary),$subnetwork,$lsys,$sublocalID)  . ' rel="external" target="_blank">';
+
+                        }
+                        else {
+
+                            //only as fallback in case the item doesn't match the general rule
+                            echo '<a href=' . sprintf(MobileConfigs::getBacklinkSourceSystem($itemNetworkBacklinkDictionary),$itemNetwork,$lsys,$itemLibraryCode)  . ' rel="external" target="_blank">';
+
+                        }
+
+                        break;
+                    case "SNL":
+                    case "CCSA":
+                        echo '<a href=' . sprintf(MobileConfigs::getBacklinkSourceSystem($itemNetworkBacklinkDictionary),$lsys)  . ' rel="external" target="_blank">';
+                        break;
+                    default:
+                        //Alephsystems
+                        echo '<a href=' . sprintf(MobileConfigs::getBacklinkSourceSystem($itemNetworkBacklinkDictionary),$lsys,$itemLibraryCode)  . ' rel="external" target="_blank">';
+                }
+
+
+
+            } else {
+
+                //send the user back to swissbib in fullview mode
+                echo '<a href="http://www.swissbib.ch/TouchPoint/perma.do?q=0%3D%22'.$id.'%22+IN+[3]&v=nose&l='.$language.'&library='.$itemLibraryCode.'" rel="external" target="_blank">';
+            }
+
+            /*
+             * end of extension Guenter
+             */
+
+
+
+
 			echo '<h3>';
-				
-			
-			echo getHoldingField($item,'0');
+			$libraryName=getHoldingField($item,'0');
+
+			if (trim($libraryName)!="") {
+				echo $libraryName;
+			} else if ($itemNetwork=='SNL') { //Swiss National Library
+				echo getLibraryName('S1');
+			} else if (substr($itemNetwork,0,1)=='R' || $itemNetwork=='CCSA') {
+				echo getLibraryName($itemLibraryCode);
+			}
 			echo '</h3>';
 			echo '<p><strong>';
-			if (getHoldingField($item,'b')=='E02') {
-				$location=getHoldingField($item,'c');
-				if (in_array($location, array_keys($lookuptable))) {
-					echo $lookuptable["$location"]; //lookup table more up-to-date than swissbib for E02
-				} else {
-					echo getHoldingField($item,'1'); //if some locations are not defined in the look-up table
-				}
-			} else {
-				echo getHoldingField($item,'1');
-			}
-			
+			echo getHoldingField($item,'1');
+
 			echo '</strong></p>';
-			
+
 			echo '<p>';
 			$secondCallNumber=getHoldingField($item,'s');
-			if ($secondCallNumber) { 
-				echo $secondCallNumber; //2nd call number (to be displayed first as in nebis)				
-				echo ' ';					
+			if ($secondCallNumber) {
+				echo $secondCallNumber; //2nd call number (to be displayed first)
+				echo ' ';
 			}
-						
+
 			echo getHoldingField($item,'j'); //call number
 			echo '</p>';
 			echo '</a>';
 			echo '</li>';
 			echo "\n";
 		}
-	}			
-	
-	echo '</ul>';			
-			
-			
+	}
+
+	echo '</ul>';
+
+
 
 }
-
-
-
 
 ?>
