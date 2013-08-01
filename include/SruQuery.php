@@ -2,7 +2,9 @@
 
 class SruQuery
 {
-	private $_baseUrl="http://sru.swissbib.ch/SRW/search/?";
+	//private $_baseUrl="http://sru.swissbib.ch/SRW/search/?";
+    private $_baseUrl="http://localhost:8111/search?";
+
 	private $_standardParameters="&version=1.1&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1&resultSetTTL=300&recordPacking=xml&maximumRecords=10";	
 	
 	
