@@ -3,12 +3,14 @@
 class SruQuery
 {
 	//private $_baseUrl="http://sru.swissbib.ch/SRW/search/?";
-    private $_baseUrl="http://localhost:8111/search?";
+    //private $_baseUrl="http://localhost:8111/search?";
+    private $_baseUrl="http://sb-s13.swissbib.unibas.ch/search?";
 
-	private $_standardParameters="&version=1.1&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1&resultSetTTL=300&recordPacking=xml&maximumRecords=10";	
-	
-	
-	function getResultsFromSearch($query, $network, $library, $offset=1)
+	private $_standardParameters="&version=1.1&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1&resultSetTTL=300&recordPacking=xml&maximumRecords=10";
+    //private $_standardParameters="&version=1.1&operation=searchRetrieve&recordSchema=marcns&resultSetTTL=300&recordPacking=xml&maximumRecords=10";
+
+
+    function getResultsFromSearch($query, $network, $library, $offset=1)
 	{
 		$queryParameter="&query=dc.anywhere+%3D+%22".urlencode($query)."%22";
 		
@@ -62,8 +64,13 @@ class SruQuery
 	}
 	
 	private function sendToSru($url)
-	{		
-		//$response = @file_get_contents($url);
+	{
+
+        //some google hints related to file_get_contents
+        //http://stackoverflow.com/questions/3629504/php-file-get-contents-very-slow-when-using-full-url
+
+        //$context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
+        //$response = @file_get_contents($url, false,$context);
 
         $ch = curl_init($url);
         //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: text/xml'));
