@@ -109,6 +109,8 @@ include("../include/Header.php");
 			<a href="../fr/index.php" data-role="button">français</a>
 			<a data-role="button" class="ui-btn-active">English</a>			
 		</div>
+    <br/>
+    Like us on <a href="http://www.facebook.com/epfl.library">Facebook</a>. <br/><br/>
 	Powered by <a href="https://github.com/swissbib/swissbibMobile">swissbibMobile</a>.
 	';
 	}

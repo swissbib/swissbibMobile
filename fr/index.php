@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿    <!DOCTYPE html>
 <?php
 //Version francaise
 include("../include/Header.php");
@@ -112,9 +112,11 @@ include("../include/Header.php");
 		<br />
 		<div data-role="controlgroup" data-type="horizontal" align="center">
 			<a data-role="button" class="ui-btn-active">français</a>
-			<a href="../en/index.php" data-role="button">English</a>			
+			<a href="../en/index.php" data-role="button">English</a>	
 		</div>
-		Powered by <a href="https://github.com/swissbib/swissbibMobile">swissbibMobile</a>.';
+        <br/>
+        Rejoignez-nous sur <a href="http://www.facebook.com/epfl.library">Facebook</a>. <br/><br/>
+        Powered by <a href="https://github.com/swissbib/swissbibMobile">swissbibMobile</a>.';
 		}
 
 
