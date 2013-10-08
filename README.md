@@ -1,10 +1,10 @@
-[swissbibMobile](http://sisbsrv15.epfl.ch/library/swissbib) - Mobile Client for Swissbib
+[swissbibMobile](http://www.swissbib.ch/m) - Mobile Client for Swissbib
 ========================================================================================
 
 Description
 -----------
 
-Based on the [SRU/SRW service from Swissbib](http://www.swissbib.org/wiki/index.php?title=SRU) and the framework [jQuery Mobile](http://jquerymobile.com/), swissbibMobile lets you display [swissbib](http://swissbib.ch) search results on all popular mobile device platforms. It happens on the web (HTML5-based), there is no need to install any kind of application. It is written in PHP.
+Based on the [SRU/SRW service from Swissbib](http://www.swissbib.org/wiki/index.php?title=SRU) and the framework [jQuery Mobile](http://jquerymobile.com/), swissbibMobile lets you display [swissbib](http://www.swissbib.ch) search results on all popular mobile device platforms. It happens on the web (HTML5-based), there is no need to install any kind of application. It is written in PHP.
 
 This project was developed as a collaboration between the Swissbib team and [EPFL Library](http://library.epfl.ch). Have a look at [EPFL Library Mobile](http://library.epfl.ch/mobile) to see it live.
 
@@ -16,12 +16,12 @@ Use it for your library online
 
 All libraries in swissbib (more than 700) can use this service to display a mobile version of their catalogue. Here are the predefined solutions of swissbibMobile :
 
-* [http://sisbsrv15.epfl.ch/library/swissbib/index.php](http://sisbsrv15.epfl.ch/library/swissbib/index.php) : search the whole swissbib
-* [http://sisbsrv15.epfl.ch/library/swissbib/index.php?library=A100](http://sisbsrv15.epfl.ch/library/swissbib/index.php?library=A100) : search the whole swissbib with a predefined filter for a specific library (UB Basel with library code A100 in the example)
-* [http://sisbsrv15.epfl.ch/library/swissbib/index.php?network=IDSBB&library=A100](http://sisbsrv15.epfl.ch/library/swissbib/index.php?network=IDSBB&library=A100) : search in a specific library network (network code IDS Basel-Bern in the example) with a predefined filter for a specific library (UB Basel in the example). 
-* [http://sisbsrv15.epfl.ch/library/swissbib/index.php?network=IDSBB](http://sisbsrv15.epfl.ch/library/swissbib/index.php?network=IDSBB) : search only in a specific network (IDS Basel-Bern in the example)
+* [http://www.swissbib.ch/m](http://www.swissbib.ch/m) : search the whole swissbib
+* [http://www.swissbib.ch/m/?library=A100](http://www.swissbib.ch/m/?library=A100) : search the whole swissbib with a predefined filter for a specific library (UB Basel with library code A100 in the example)
+* [http://www.swissbib.ch/m/?network=IDSBB&library=A100](http://www.swissbib.ch/m/?network=IDSBB&library=A100) : search in a specific library network (network code IDS Basel-Bern in the example) with a predefined filter for a specific library (UB Basel in the example). 
+* [http://www.swissbib.ch/m/?network=IDSBB](http://www.swissbib.ch/m/?network=IDSBB) : search only in a specific network (IDS Basel-Bern in the example)
 
-To use this, you need to add the wanted parameters after the url `http://sisbsrv15.epfl.ch/library/swissbib?`. For example for IDS Basel-Bern network, add `network=IDSBB`. For UB Basel, add `library=A100`. Have a look at the list of [all library codes and network codes](https://github.com/downloads/swissbib/swissbibMobile/library_codes.pdf).
+To use this, you need to add the wanted parameters after the url `http://www.swissbib.ch/m/?`. For example for IDS Basel-Bern network, add `network=IDSBB`. For UB Basel, add `library=A100`. Have a look at the list of [all library codes and network codes](https://github.com/downloads/swissbib/swissbibMobile/library_codes.pdf).
 
 
 Use it on your own servers
@@ -41,7 +41,7 @@ To use the code on your own servers, you need to have a PHP version >= 5.2.
 Report problems
 ---------------
 
-If you encounter bugs, or have feature requests, please use the [issue tracker in GitHub](https://github.com/liowalter/swissbibMobile/issues). Alternatively, you can send an email to [Lionel Walter](https://github.com/liowalter).
+If you encounter bugs, or have feature requests, please use the [issue tracker in GitHub](https://github.com/swissbib/swissbibMobile/issues). Alternatively, you can send an email to [Lionel Walter](https://github.com/liowalter).
 
 
 Disclaimer
