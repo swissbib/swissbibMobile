@@ -3,8 +3,9 @@
 class SruQuery
 {
 	//private $_baseUrl="http://sru.swissbib.ch/SRW/search/?";
-    //private $_baseUrl="http://localhost:8111/search?";
-    private $_baseUrl="http://sb-s13.swissbib.unibas.ch/search?";
+    //private $_baseUrl="http://localhost:8080/sru/search?";
+    private $_baseUrl="http://srutest.swissbib.ch/sru/search?";
+    //private $_baseUrl="http://sru.swissbib.ch/sru/search?";
 
 	private $_standardParameters="&version=1.1&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1&resultSetTTL=300&recordPacking=xml&maximumRecords=10";
     //private $_standardParameters="&version=1.1&operation=searchRetrieve&recordSchema=marcns&resultSetTTL=300&recordPacking=xml&maximumRecords=10";
@@ -69,14 +70,14 @@ class SruQuery
         //some google hints related to file_get_contents
         //http://stackoverflow.com/questions/3629504/php-file-get-contents-very-slow-when-using-full-url
 
-        //$context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
-        //$response = @file_get_contents($url, false,$context);
+        $context = stream_context_create(array('http' => array('header'=>'Connection: close\r\n')));
+        $response = @file_get_contents($url, false,$context);
 
-        $ch = curl_init($url);
+        //$ch = curl_init($url);
         //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: text/xml'));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $response = curl_exec($ch);
-        curl_close($ch);
+        //curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //$response = curl_exec($ch);
+        //curl_close($ch);
 
 
 		//echo "<a href='".$url."'>link</a>";
