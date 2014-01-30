@@ -45,7 +45,7 @@ if (!isset($_REQUEST["language"])) {
 
 	<div data-role="page" data-add-back-btn="true">
 		<div data-role="header" data-theme="l">
-			<h1>swissbib&nbsp;<img src="http://www.swissbib.org/doc/test_3.png"/></h1>
+			<h1>swissbib&nbsp;<img src="/themes/swissbibsingle/images/favicon.ico"/></h1>
 		</div>
 		<div data-role="content">
 		
@@ -127,7 +127,7 @@ if (!isset($_REQUEST["language"])) {
 			//display a single item	
 			displayItem($_REQUEST["id"], $network, $library, $language);	
 		} else {
-			$urlRegularSwissbib='http://www.swissbib.ch/TouchPoint/start.do';
+			$urlRegularSwissbib='/Search/Home';
 			if ($language!='de') {
 				$urlRegularSwissbib=$urlRegularSwissbib."?Language=".$language;
 			}
